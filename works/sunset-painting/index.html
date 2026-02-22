@@ -150,25 +150,63 @@
             });
         });
 
-        // 音频自动播放功能（延迟1秒播放）
+        // 音频自动播放功能（带重试机制）
         const audioElement = document.querySelector('audio');
         if (audioElement) {
             // 延迟1秒后开始播放音频
             setTimeout(() => {
-                const playPromise = audioElement.play();
-
-                if (playPromise !== undefined) {
-                    playPromise.then(() => {
-                        console.log('音频自动播放成功（延迟1秒）');
-                    }).catch(error => {
-                        // 自动播放被阻止
-                        console.log('自动播放被阻止:', error);
-
-                        // 显示播放提示
-                        showAutoPlayPrompt(audioElement);
-                    });
-                }
+                tryAutoPlayWithRetry(audioElement, 3, 0);
             }, 1000); // 1秒延迟
+        }
+
+        // 带重试和用户交互支持的自动播放函数
+        function tryAutoPlayWithRetry(audioElement, maxRetries = 3, retryCount = 0) {
+            console.log(`尝试自动播放音频 (重试次数: ${retryCount}/${maxRetries})`);
+
+            const playPromise = audioElement.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log('音频自动播放成功');
+                }).catch(error => {
+                    // 自动播放被阻止
+                    console.log('自动播放被阻止:', error.name, error.message);
+
+                    // 检查是否是自动播放被阻止的错误
+                    const isAutoplayError = error.name.includes('NotAllowedError') ||
+                                          error.name.includes('NotSupportedError') ||
+                                          error.message.includes('user gesture') ||
+                                          error.message.includes('autoplay');
+
+                    if (isAutoplayError && retryCount < maxRetries) {
+                        // 计算重试延迟（递增：2秒, 5秒, 8秒）
+                        const retryDelay = 2000 + (retryCount * 3000); // 2秒, 5秒, 8秒
+                        console.log(`将在 ${retryDelay/1000} 秒后重试，或点击页面立即重试`);
+
+                        // 设置超时重试
+                        const retryTimer = setTimeout(() => {
+                            tryAutoPlayWithRetry(audioElement, maxRetries, retryCount + 1);
+                        }, retryDelay);
+
+                        // 添加用户交互监听器（点击页面立即重试）
+                        const handleUserInteraction = () => {
+                            console.log('检测到用户交互，立即重试音频播放');
+                            clearTimeout(retryTimer); // 取消超时重试
+                            document.removeEventListener('click', handleUserInteraction);
+                            document.removeEventListener('touchstart', handleUserInteraction);
+                            tryAutoPlayWithRetry(audioElement, maxRetries, retryCount + 1);
+                        };
+
+                        // 监听点击和触摸事件
+                        document.addEventListener('click', handleUserInteraction, { once: true });
+                        document.addEventListener('touchstart', handleUserInteraction, { once: true });
+                    } else {
+                        // 重试次数用尽或不是自动播放错误，显示提示
+                        console.log('自动播放重试失败，显示用户提示');
+                        showAutoPlayPrompt(audioElement);
+                    }
+                });
+            }
         }
 
         // 显示自动播放提示
