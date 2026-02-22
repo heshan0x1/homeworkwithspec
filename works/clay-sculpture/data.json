@@ -1,0 +1,21 @@
+{
+    "id": "clay-sculpture",
+    "title": "黏土小动物",
+    "category": "雕塑",
+    "date": "2023年12月",
+    "description": "手工制作的黏土小动物雕塑，包括小猫、小狗和小兔子。",
+    "medium": "黏土雕塑",
+    "size": "约15cm高",
+    "materials": ["黏土", "雕塑工具", "颜料"],
+    "images": [
+        {
+            "src": "images/main.jpg",
+            "alt": "黏土小动物雕塑作品",
+            "description": "主作品图片，展示一组黏土小动物雕塑"
+        }
+    ],
+    "audio": null,
+    "relatedWorks": [],
+    "createdAt": "2023-12-20",
+    "updatedAt": "2023-12-25"
+}

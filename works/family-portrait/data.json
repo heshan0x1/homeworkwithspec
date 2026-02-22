@@ -1,0 +1,32 @@
+{
+    "id": "family-portrait",
+    "title": "家庭肖像",
+    "category": "绘画",
+    "date": "2024年1月",
+    "description": "丙烯画作品，温馨的家庭肖像。描绘了一家人在公园野餐的欢乐场景。",
+    "medium": "丙烯画",
+    "size": "40cm × 50cm",
+    "materials": [
+        "丙烯颜料",
+        "画布",
+        "画笔"
+    ],
+    "images": [
+        {
+            "src": "images/main.jpg",
+            "alt": "家庭肖像丙烯画作品",
+            "description": "主作品图片，展示完整的家庭肖像画"
+        }
+    ],
+    "audio": {
+        "src": "audio/description.m4a",
+        "duration": "90",
+        "transcript": "这是一幅丙烯画作品，描绘了一家人在公园野餐的欢乐场景。画面中心是爸爸妈妈和孩子，他们坐在野餐垫上，周围是绿树和鲜花。我特别注重表现家庭成员之间的互动和情感连接，通过色彩和构图来营造温馨愉快的氛围。"
+    },
+    "relatedWorks": [
+        "sunset-painting",
+        "flower-drawing"
+    ],
+    "createdAt": "2024-01-05",
+    "updatedAt": "2024-01-10"
+}

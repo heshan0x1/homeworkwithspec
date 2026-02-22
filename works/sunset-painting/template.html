@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - 作品集</title>
+    <link rel="stylesheet" href="{{basePath}}styles/main.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="{{basePath}}index.html" style="color: white; text-decoration: none;">作品集</a></h1>
+            <p class="subtitle">艺术创作展示</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav style="margin-bottom: 2rem;">
+            <a href="{{basePath}}index.html" class="button">← 返回作品列表</a>
+        </nav>
+
+        <article class="work-detail">
+            <header>
+                <h1>{{title}}</h1>
+                <div class="work-meta" style="margin-bottom: 1.5rem;">
+                    <p><strong>分类：</strong>{{category}}</p>
+                    <p><strong>创作时间：</strong>{{date}}</p>
+                    <p><strong>媒介：</strong>{{medium}}</p>
+                    <p><strong>尺寸：</strong>{{size}}</p>
+                </div>
+            </header>
+
+            <section class="work-media">
+                <div class="work-image-container">
+                    {{#if mainImage}}
+                    <img src="{{mainImage.src}}"
+                         alt="{{mainImage.alt}}"
+                         class="work-image"
+                         id="main-work-image">
+                    {{/if}}
+                </div>
+
+                {{#if hasAudio}}
+                <div class="audio-player">
+                    <h3>作品说明音频</h3>
+                    <audio controls autoplay>
+                        <source src="{{audio.src}}" type="audio/mpeg">
+                        您的浏览器不支持音频播放。
+                    </audio>
+                    <div class="audio-transcript" style="margin-top: 1rem;">
+                        <details>
+                            <summary>查看音频文字转录</summary>
+                            <p style="margin-top: 0.5rem;">{{audio.transcript}}</p>
+                        </details>
+                    </div>
+                </div>
+                {{/if}}
+            </section>
+
+            <section class="work-info">
+                <div class="work-meta">
+                    <h3>作品信息</h3>
+                    <p><strong>ID：</strong>{{id}}</p>
+                    <p><strong>创作日期：</strong>{{createdAt}}</p>
+                    {{#if materials}}
+                    <p><strong>使用材料：</strong>{{#each materials}}{{this}}{{#unless @last}}、{{/unless}}{{/each}}</p>
+                    {{/if}}
+                </div>
+
+                <div class="work-description">
+                    <h3>作品描述</h3>
+                    <p>{{description}}</p>
+
+                    {{#if images}}
+                    <div class="additional-images" style="margin-top: 2rem;">
+                        <h4>更多图片</h4>
+                        <div class="image-gallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                            {{#each images}}
+                            {{#unless @first}}
+                            <div class="gallery-item">
+                                <img src="{{src}}"
+                                     alt="{{alt}}"
+                                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 4px; cursor: pointer;"
+                                     onclick="viewImage('{{src}}', '{{alt}}')">
+                                <p style="font-size: 0.8rem; color: #666; margin-top: 0.25rem;">{{description}}</p>
+                            </div>
+                            {{/unless}}
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> 艺术创作作品集</p>
+            <p>作品ID：{{id}} | 最后更新：{{updatedAt}}</p>
+        </div>
+    </footer>
+
+    <!-- 图片查看模态框 -->
+    <div id="image-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+            <img id="modal-image" src="" alt="" style="max-width: 100%; max-height: 90vh;">
+            <p id="modal-caption" style="color: white; text-align: center; margin-top: 1rem;"></p>
+            <button onclick="closeModal()" style="position: absolute; top: -40px; right: 0; background: #e74c3c; color: white; border: none; padding: 10px; border-radius: 4px; cursor: pointer;">关闭</button>
+        </div>
+    </div>
+
+    <script>
+        // 设置当前年份
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 图片查看功能
+        function viewImage(src, alt) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            const caption = document.getElementById('modal-caption');
+
+            modalImg.src = src;
+            modalImg.alt = alt;
+            caption.textContent = alt;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('image-modal').style.display = 'none';
+        }
+
+        // 点击模态框背景关闭
+        document.getElementById('image-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // 键盘支持
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // 音频播放器增强
+        const audioPlayers = document.querySelectorAll('audio');
+        audioPlayers.forEach(player => {
+            player.addEventListener('play', function() {
+                // 暂停其他音频
+                audioPlayers.forEach(other => {
+                    if (other !== player && !other.paused) {
+                        other.pause();
+                    }
+                });
+            });
+        });
+
+        // 音频自动播放功能（延迟1秒播放）
+        const audioElement = document.querySelector('audio');
+        if (audioElement) {
+            // 延迟1秒后开始播放音频
+            setTimeout(() => {
+                const playPromise = audioElement.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        console.log('音频自动播放成功（延迟1秒）');
+                    }).catch(error => {
+                        // 自动播放被阻止
+                        console.log('自动播放被阻止:', error);
+
+                        // 显示播放提示
+                        showAutoPlayPrompt(audioElement);
+                    });
+                }
+            }, 1000); // 1秒延迟
+        }
+
+        // 显示自动播放提示
+        function showAutoPlayPrompt(audioElement) {
+            // 创建提示元素
+            const prompt = document.createElement('div');
+            prompt.className = 'autoplay-prompt';
+            prompt.innerHTML = `
+                <p>音频已准备就绪，点击按钮播放</p>
+                <button class="play-button">播放音频</button>
+            `;
+
+            // 添加到音频播放器区域
+            const audioPlayer = document.querySelector('.audio-player');
+            if (audioPlayer) {
+                audioPlayer.appendChild(prompt);
+
+                // 添加播放按钮事件
+                const playButton = prompt.querySelector('.play-button');
+                playButton.addEventListener('click', function() {
+                    audioElement.play().catch(e => console.log('播放失败:', e));
+                    prompt.remove();
+                });
+            }
+        }
+
+        // 可访问性增强
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-navigation');
+        });
+    </script>
+</body>
+</html>

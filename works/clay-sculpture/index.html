@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黏土小动物 - 作品集</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="../../index.html" style="color: white; text-decoration: none;">作品集</a></h1>
+            <p class="subtitle">艺术创作展示</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="work-navigation">
+            <div class="work-navigation-left">
+                <a href="../../index.html" class="button return-button">返回作品列表</a>
+                <span class="work-navigation-title">作品详情</span>
+            </div>
+        </nav>
+
+        <article class="work-detail">
+            <header>
+                <h1>黏土小动物</h1>
+                <div class="work-meta" style="margin-bottom: 1.5rem;">
+                    <p><strong>分类：</strong>雕塑</p>
+                    <p><strong>创作时间：</strong>2023年12月</p>
+                    <p><strong>媒介：</strong>黏土雕塑</p>
+                    <p><strong>尺寸：</strong>约15cm高</p>
+                </div>
+            </header>
+
+            <section class="work-media">
+                <div class="work-image-container">
+                    <img src="images/main.jpg"
+                         alt="黏土小动物雕塑作品"
+                         class="work-image"
+                         id="main-work-image">
+                </div>
+            </section>
+
+            <section class="work-info">
+                <div class="work-meta">
+                    <h3>作品信息</h3>
+                    <p><strong>ID：</strong>clay-sculpture</p>
+                    <p><strong>创作日期：</strong>2023-12-20</p>
+                    <p><strong>使用材料：</strong>黏土、雕塑工具、颜料</p>
+                </div>
+
+                <div class="work-description">
+                    <h3>作品描述</h3>
+                    <p>手工制作的黏土小动物雕塑，包括小猫、小狗和小兔子。</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> 艺术创作作品集</p>
+            <p>作品ID：clay-sculpture | 最后更新：2023-12-25</p>
+        </div>
+    </footer>
+
+    <script src="../../scripts/particles.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

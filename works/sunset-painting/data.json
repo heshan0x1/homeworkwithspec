@@ -1,0 +1,37 @@
+{
+    "id": "sunset-painting",
+    "title": "日落山水",
+    "category": "绘画",
+    "date": "2024年3月",
+    "description": "一幅描绘日落时分山水景色的水彩画作品。灵感来源于一次家庭旅行中看到的美丽日落景象。",
+    "medium": "水彩画",
+    "size": "30cm × 40cm",
+    "materials": [
+        "水彩颜料",
+        "水彩纸",
+        "画笔"
+    ],
+    "images": [
+        {
+            "src": "images/main.jpg",
+            "alt": "日落山水水彩画作品",
+            "description": "主作品图片，展示完整的日落山水场景"
+        },
+        {
+            "src": "images/detail-1.jpg",
+            "alt": "日落山水细节部分",
+            "description": "山体部分的细节展示"
+        }
+    ],
+    "audio": {
+        "src": "audio/description.m4a",
+        "duration": "120",
+        "transcript": "这是一幅描绘日落时分山水景色的水彩画作品。画面中，夕阳西下，金色的阳光洒在山峦和水面上，营造出温暖而宁静的氛围。前景是几棵松树的剪影，中景是连绵的山脉，远景是逐渐变淡的远山和天空。我使用了暖色调的黄色、橙色和红色来表现日落的光线，冷色调的蓝色和紫色来表现阴影部分。创作这幅画时，我特别注重光线和阴影的对比，希望通过色彩的变化来表现时间的流逝和自然的美妙。"
+    },
+    "relatedWorks": [
+        "flower-drawing",
+        "winter-scene"
+    ],
+    "createdAt": "2024-03-15",
+    "updatedAt": "2024-03-20"
+}

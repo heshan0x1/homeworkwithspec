@@ -1,0 +1,32 @@
+{
+    "id": "winter-scene",
+    "title": "冬日雪景",
+    "category": "绘画",
+    "date": "2023年11月",
+    "description": "描绘冬日雪景的油画作品，展现了雪后村庄的宁静美景。",
+    "medium": "油画",
+    "size": "35cm × 45cm",
+    "materials": [
+        "油画颜料",
+        "画布",
+        "画笔"
+    ],
+    "images": [
+        {
+            "src": "images/main.jpg",
+            "alt": "冬日雪景油画作品",
+            "description": "主作品图片，展示冬日雪景油画"
+        }
+    ],
+    "audio": {
+        "src": "audio/description.m4a",
+        "duration": "100",
+        "transcript": "这是一幅描绘冬日雪景的油画作品。画面中，白雪覆盖的村庄在清晨的阳光照射下显得格外宁静。房屋的屋顶上积着厚厚的雪，烟囱里冒出袅袅炊烟。远处的山峦也被白雪覆盖，天空是淡淡的蓝色。我使用了冷色调的蓝色和白色来表现雪的质感，同时用温暖的黄色来表现阳光和灯光，形成冷暖对比。"
+    },
+    "relatedWorks": [
+        "sunset-painting",
+        "family-portrait"
+    ],
+    "createdAt": "2023-11-15",
+    "updatedAt": "2023-11-20"
+}

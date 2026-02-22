@@ -1,0 +1,21 @@
+{
+    "id": "flower-drawing",
+    "title": "春日花朵",
+    "category": "素描",
+    "date": "2024年2月",
+    "description": "铅笔素描作品，描绘春天盛开的花朵。仔细观察了花瓣的形态和纹理，尝试表现花朵的生命力。",
+    "medium": "铅笔素描",
+    "size": "21cm × 29.7cm",
+    "materials": ["铅笔", "素描纸", "橡皮"],
+    "images": [
+        {
+            "src": "images/main.jpg",
+            "alt": "春日花朵铅笔素描作品",
+            "description": "主作品图片，展示完整的春日花朵素描"
+        }
+    ],
+    "audio": null,
+    "relatedWorks": ["sunset-painting"],
+    "createdAt": "2024-02-10",
+    "updatedAt": "2024-02-15"
+}

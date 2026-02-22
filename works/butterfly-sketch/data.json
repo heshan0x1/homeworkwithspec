@@ -1,0 +1,21 @@
+{
+    "id": "butterfly-sketch",
+    "title": "蝴蝶速写",
+    "category": "素描",
+    "date": "2023年10月",
+    "description": "彩色铅笔绘制的蝴蝶速写，捕捉了蝴蝶翅膀的美丽图案和色彩。",
+    "medium": "彩色铅笔",
+    "size": "15cm × 20cm",
+    "materials": ["彩色铅笔", "速写纸"],
+    "images": [
+        {
+            "src": "images/main.jpg",
+            "alt": "蝴蝶速写彩色铅笔作品",
+            "description": "主作品图片，展示蝴蝶速写作品"
+        }
+    ],
+    "audio": null,
+    "relatedWorks": ["flower-drawing"],
+    "createdAt": "2023-10-05",
+    "updatedAt": "2023-10-10"
+}

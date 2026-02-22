@@ -1,0 +1,26 @@
+[
+    {
+        "id": "all",
+        "name": "所有作品",
+        "description": "展示所有作品",
+        "count": 6
+    },
+    {
+        "id": "painting",
+        "name": "绘画",
+        "description": "包括水彩、油画、丙烯等绘画作品",
+        "count": 3
+    },
+    {
+        "id": "drawing",
+        "name": "素描",
+        "description": "铅笔、彩色铅笔等素描作品",
+        "count": 2
+    },
+    {
+        "id": "sculpture",
+        "name": "雕塑",
+        "description": "黏土、陶土等雕塑作品",
+        "count": 1
+    }
+]

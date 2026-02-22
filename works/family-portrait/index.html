@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家庭肖像 - 作品集</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="../../index.html" style="color: white; text-decoration: none;">作品集</a></h1>
+            <p class="subtitle">艺术创作展示</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="work-navigation">
+            <div class="work-navigation-left">
+                <a href="../../index.html" class="button return-button">返回作品列表</a>
+                <span class="work-navigation-title">作品详情</span>
+            </div>
+        </nav>
+
+        <article class="work-detail">
+            <header>
+                <h1>家庭肖像</h1>
+                <div class="work-meta" style="margin-bottom: 1.5rem;">
+                    <p><strong>分类：</strong>绘画</p>
+                    <p><strong>创作时间：</strong>2024年1月</p>
+                    <p><strong>媒介：</strong>丙烯画</p>
+                    <p><strong>尺寸：</strong>40cm × 50cm</p>
+                </div>
+            </header>
+
+            <section class="work-media">
+                <div class="work-image-container">
+                    <img src="images/main.jpg"
+                         alt="家庭肖像丙烯画作品"
+                         class="work-image"
+                         id="main-work-image">
+                </div>
+
+                <div class="audio-player">
+                    <h3>作品说明音频</h3>
+                    <audio controls autoplay>
+                        <source src="audio/description.m4a" type="audio/mp4">
+                        您的浏览器不支持音频播放。
+                    </audio>
+                    <div class="audio-transcript" style="margin-top: 1rem;">
+                        <details>
+                            <summary>查看音频文字转录</summary>
+                            <p style="margin-top: 0.5rem;">这是一幅丙烯画作品，描绘了一家人在公园野餐的欢乐场景。画面中心是爸爸妈妈和孩子，他们坐在野餐垫上，周围是绿树和鲜花。我特别注重表现家庭成员之间的互动和情感连接，通过色彩和构图来营造温馨愉快的氛围。</p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <section class="work-info">
+                <div class="work-meta">
+                    <h3>作品信息</h3>
+                    <p><strong>ID：</strong>family-portrait</p>
+                    <p><strong>创作日期：</strong>2024-01-05</p>
+                    <p><strong>使用材料：</strong>丙烯颜料、画布、画笔</p>
+                </div>
+
+                <div class="work-description">
+                    <h3>作品描述</h3>
+                    <p>丙烯画作品，温馨的家庭肖像。描绘了一家人在公园野餐的欢乐场景。</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> 艺术创作作品集</p>
+            <p>作品ID：family-portrait | 最后更新：2024-01-10</p>
+        </div>
+    </footer>
+
+    <script src="../../scripts/particles.js"></script>
+    <script>
+        // 设置当前年份
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 音频播放器增强
+        const audioPlayers = document.querySelectorAll('audio');
+        audioPlayers.forEach(player => {
+            player.addEventListener('play', function() {
+                // 暂停其他音频
+                audioPlayers.forEach(other => {
+                    if (other !== player && !other.paused) {
+                        other.pause();
+                    }
+                });
+            });
+        });
+
+        // 音频自动播放功能（延迟1秒播放）
+        const audioElement = document.querySelector('audio');
+        if (audioElement) {
+            // 延迟1秒后开始播放音频
+            setTimeout(() => {
+                const playPromise = audioElement.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        console.log('音频自动播放成功（延迟1秒）');
+                    }).catch(error => {
+                        // 自动播放被阻止
+                        console.log('自动播放被阻止:', error);
+
+                        // 显示播放提示
+                        showAutoPlayPrompt(audioElement);
+                    });
+                }
+            }, 1000); // 1秒延迟
+        }
+
+        // 显示自动播放提示
+        function showAutoPlayPrompt(audioElement) {
+            // 创建提示元素
+            const prompt = document.createElement('div');
+            prompt.className = 'autoplay-prompt';
+            prompt.innerHTML = `
+                <p>音频已准备就绪，点击按钮播放</p>
+                <button class="play-button">播放音频</button>
+            `;
+
+            // 添加到音频播放器区域
+            const audioPlayer = document.querySelector('.audio-player');
+            if (audioPlayer) {
+                audioPlayer.appendChild(prompt);
+
+                // 添加播放按钮事件
+                const playButton = prompt.querySelector('.play-button');
+                playButton.addEventListener('click', function() {
+                    audioElement.play().catch(e => console.log('播放失败:', e));
+                    prompt.remove();
+                });
+            }
+        }
+
+        // 可访问性增强
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-navigation');
+        });
+    </script>
+</body>
+</html>
