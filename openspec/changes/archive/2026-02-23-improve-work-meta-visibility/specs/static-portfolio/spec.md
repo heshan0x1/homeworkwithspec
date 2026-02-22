@@ -1,26 +1,9 @@
 # static-portfolio Specification
 
 ## Purpose
-TBD - created by archiving changes: portfolio-website (2026-02-22) and improve-work-meta-visibility (2026-02-23). Update Purpose after archive.
+TBD - created by archiving change improve-work-meta-visibility. Update Purpose after archive.
+
 ## Requirements
-### Requirement: Portfolio Homepage
-
-作品集主页SHALL显示作品分类和近期作品网格供浏览。
-
-#### Scenario: User visits the homepage
-
-- **WHEN** 用户访问主页
-- **THEN** 他们看到带有作品集标题的页眉
-- **AND** 他们看到带有分类的导航菜单
-- **AND** 他们看到近期作品网格，包含缩略图和标题
-- **AND** 他们可以点击任何作品查看详情页面
-
-#### Scenario: User views artwork categories
-
-- **WHEN** 用户查看主页
-- **THEN** 他们可以看到可用的作品分类（例如：绘画、素描、雕塑）
-- **AND** 他们可以点击分类来过滤或查看该分类下的作品
-
 ### Requirement: Visual Accessibility and Readability
 
 作品集SHALL提供足够的视觉对比度，确保所有文本内容清晰可读。
@@ -116,4 +99,3 @@ TBD - created by archiving changes: portfolio-website (2026-02-22) and improve-w
 - **THEN** 所有文本与背景有足够对比度
 - **AND** 重要信息有视觉强调
 - **AND** 布局支持文本缩放而不破坏
-

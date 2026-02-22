@@ -576,27 +576,21 @@ footer p {
     margin-top: 2rem;
 }
 
-/* 作品元数据区域 - 改进可读性和可访问性 */
 .work-meta {
-    background: linear-gradient(135deg, #ffe6ea 0%, #ffd6e0 100%);
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef1 100%);
     padding: 1.5rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 107, 139, 0.4);
-    box-shadow: 0 4px 12px rgba(255, 118, 140, 0.15);
+    border: 1px solid rgba(255, 118, 140, 0.2);
 }
 
 .work-meta p {
     margin-bottom: 0.75rem;
     display: flex;
-    color: #1a1a1a;
-    line-height: 1.6;
 }
 
-/* 元数据标签样式 - 使用主题色提高可见性 */
 .work-meta strong {
     min-width: 80px;
-    color: #d81b60;
-    font-weight: 700;
+    color: #2c3e50;
 }
 
 .work-description {
@@ -647,8 +641,7 @@ footer p {
 @media (prefers-contrast: high) {
     .artwork-card,
     .category-card,
-    .work-detail,
-    .work-meta {
+    .work-detail {
         border: 2px solid #333;
     }
 }
@@ -691,10 +684,6 @@ footer p {
         gap: 1.5rem;
     }
 
-    .work-meta {
-        padding: 1.25rem;
-    }
-
     .artwork-card {
         margin-bottom: 1rem;
     }
@@ -715,13 +704,5 @@ footer p {
     .work-detail {
         padding: 1rem;
         margin: 1rem auto;
-    }
-
-    .work-meta {
-        padding: 1rem;
-    }
-
-    .work-meta strong {
-        min-width: 70px;
     }
 }
