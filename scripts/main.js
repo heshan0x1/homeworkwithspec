@@ -527,12 +527,12 @@ function initAccessibility() {
         document.body.classList.remove('keyboard-navigation');
     });
 
-    // 跳转链接
-    const skipLink = document.createElement('a');
-    skipLink.href = '#main-content';
-    skipLink.className = 'skip-link';
-    skipLink.textContent = '跳转到主要内容';
-    document.body.insertBefore(skipLink, document.body.firstChild);
+    // // 跳转链接
+    // const skipLink = document.createElement('a');
+    // skipLink.href = '#main-content';
+    // skipLink.className = 'skip-link';
+    // skipLink.textContent = '跳转到主要内容';
+    // document.body.insertBefore(skipLink, document.body.firstChild);
 }
 
 // DOM加载完成后初始化
