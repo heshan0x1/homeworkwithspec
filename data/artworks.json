@@ -1,19 +1,5 @@
 [
   {
-    "id": "sunset-painting",
-    "title": "日落山水",
-    "category": "绘画",
-    "date": "2024年3月",
-    "description": "一幅描绘日落时分山水景色的水彩画作品",
-    "image": "works/sunset-painting/images/main.jpg",
-    "thumbnail": "works/sunset-painting/images/thumbnail.jpg",
-    "url": "works/sunset-painting/index.html",
-    "medium": "水彩画",
-    "size": "30cm × 40cm",
-    "hasAudio": true,
-    "audioFile": "works/sunset-painting/audio/description.m4a"
-  },
-  {
     "id": "flower-drawing",
     "title": "春日花朵",
     "category": "素描",
@@ -24,60 +10,6 @@
     "url": "works/flower-drawing/index.html",
     "medium": "铅笔素描",
     "size": "21cm × 29.7cm",
-    "hasAudio": false
-  },
-  {
-    "id": "family-portrait",
-    "title": "家庭肖像",
-    "category": "绘画",
-    "date": "2024年1月",
-    "description": "丙烯画作品，温馨的家庭肖像",
-    "image": "works/family-portrait/images/main.jpg",
-    "thumbnail": "works/family-portrait/images/thumbnail.jpg",
-    "url": "works/family-portrait/index.html",
-    "medium": "丙烯画",
-    "size": "40cm × 50cm",
-    "hasAudio": true,
-    "audioFile": "works/family-portrait/audio/description.m4a"
-  },
-  {
-    "id": "clay-sculpture",
-    "title": "黏土小动物",
-    "category": "雕塑",
-    "date": "2023年12月",
-    "description": "手工制作的黏土小动物雕塑",
-    "image": "works/clay-sculpture/images/main.jpg",
-    "thumbnail": "works/clay-sculpture/images/thumbnail.jpg",
-    "url": "works/clay-sculpture/index.html",
-    "medium": "黏土雕塑",
-    "size": "约15cm高",
-    "hasAudio": false
-  },
-  {
-    "id": "winter-scene",
-    "title": "冬日雪景",
-    "category": "绘画",
-    "date": "2023年11月",
-    "description": "描绘冬日雪景的油画作品",
-    "image": "works/winter-scene/images/main.jpg",
-    "thumbnail": "works/winter-scene/images/thumbnail.jpg",
-    "url": "works/winter-scene/index.html",
-    "medium": "油画",
-    "size": "35cm × 45cm",
-    "hasAudio": true,
-    "audioFile": "works/winter-scene/audio/description.m4a"
-  },
-  {
-    "id": "butterfly-sketch",
-    "title": "蝴蝶速写",
-    "category": "素描",
-    "date": "2023年10月",
-    "description": "彩色铅笔绘制的蝴蝶速写",
-    "image": "works/butterfly-sketch/images/main.jpg",
-    "thumbnail": "works/butterfly-sketch/images/thumbnail.jpg",
-    "url": "works/butterfly-sketch/index.html",
-    "medium": "彩色铅笔",
-    "size": "15cm × 20cm",
     "hasAudio": false
   }
 ]
