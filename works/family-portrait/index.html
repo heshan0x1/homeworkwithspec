@@ -25,12 +25,12 @@
 
         <article class="work-detail">
             <header>
-                <h1>家庭肖像</h1>
+                <h1 data-field="title">家庭肖像</h1>
                 <div class="work-meta" style="margin-bottom: 1.5rem;">
-                    <p><strong>分类：</strong>绘画</p>
-                    <p><strong>创作时间：</strong>2024年1月</p>
-                    <p><strong>媒介：</strong>丙烯画</p>
-                    <p><strong>尺寸：</strong>40cm × 50cm</p>
+                    <p><strong>分类：</strong><span data-field="category">绘画</span></p>
+                    <p><strong>创作时间：</strong><span data-field="date">2024年1月</span></p>
+                    <p><strong>媒介：</strong><span data-field="medium">丙烯画</span></p>
+                    <p><strong>尺寸：</strong><span data-field="size">40cm × 50cm</span></p>
                 </div>
             </header>
 
@@ -39,7 +39,7 @@
                     <img src="images/main.jpg"
                          alt="家庭肖像丙烯画作品"
                          class="work-image"
-                         id="main-work-image">
+                         id="main-work-image" data-field="mainImage">
                 </div>
 
                 <div class="audio-player">
@@ -60,14 +60,14 @@
             <section class="work-info">
                 <div class="work-meta">
                     <h3>作品信息</h3>
-                    <p><strong>ID：</strong>family-portrait</p>
-                    <p><strong>创作日期：</strong>2024-01-05</p>
-                    <p><strong>使用材料：</strong>丙烯颜料、画布、画笔</p>
+                    <p><strong>ID：</strong><span data-field="id">family-portrait</span></p>
+                    <p><strong>创作日期：</strong><span data-field="createdAt">2024-01-05</span></p>
+                    <p><strong>使用材料：</strong><span data-field="materials">丙烯颜料、画布、画笔</span></p>
                 </div>
 
                 <div class="work-description">
                     <h3>作品描述</h3>
-                    <p>丙烯画作品，温馨的家庭肖像。描绘了一家人在公园野餐的欢乐场景。</p>
+                    <p data-field="description">丙烯画作品，温馨的家庭肖像。描绘了一家人在公园野餐的欢乐场景。</p>
                 </div>
             </section>
         </article>
@@ -76,11 +76,12 @@
     <footer>
         <div class="container">
             <p>© <span id="current-year"></span> 艺术创作作品集</p>
-            <p>作品ID：family-portrait | 最后更新：2024-01-10</p>
+            <p>作品ID：<span data-field="id">family-portrait</span> | 最后更新：<span data-field="updatedAt">2024-01-10</span></p>
         </div>
     </footer>
 
     <script src="../../scripts/particles.js"></script>
+    <script src="../../scripts/work-loader.js"></script>
     <script>
         // 设置当前年份
         document.getElementById('current-year').textContent = new Date().getFullYear();

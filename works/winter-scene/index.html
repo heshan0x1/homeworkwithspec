@@ -25,12 +25,12 @@
 
         <article class="work-detail">
             <header>
-                <h1>冬日雪景</h1>
+                <h1 data-field="title">冬日雪景</h1>
                 <div class="work-meta" style="margin-bottom: 1.5rem;">
-                    <p><strong>分类：</strong>绘画</p>
-                    <p><strong>创作时间：</strong>2023年11月</p>
-                    <p><strong>媒介：</strong>油画</p>
-                    <p><strong>尺寸：</strong>35cm × 45cm</p>
+                    <p><strong>分类：</strong><span data-field="category">绘画</span></p>
+                    <p><strong>创作时间：</strong><span data-field="date">2023年11月</span></p>
+                    <p><strong>媒介：</strong><span data-field="medium">油画</span></p>
+                    <p><strong>尺寸：</strong><span data-field="size">35cm × 45cm</span></p>
                 </div>
             </header>
 
@@ -39,7 +39,7 @@
                     <img src="images/main.jpg"
                          alt="冬日雪景油画作品"
                          class="work-image"
-                         id="main-work-image">
+                         id="main-work-image" data-field="mainImage">
                 </div>
 
                 <div class="audio-player">
@@ -60,14 +60,14 @@
             <section class="work-info">
                 <div class="work-meta">
                     <h3>作品信息</h3>
-                    <p><strong>ID：</strong>winter-scene</p>
-                    <p><strong>创作日期：</strong>2023-11-15</p>
-                    <p><strong>使用材料：</strong>油画颜料、画布、画笔</p>
+                    <p><strong>ID：</strong><span data-field="id">winter-scene</span></p>
+                    <p><strong>创作日期：</strong><span data-field="createdAt">2023-11-15</span></p>
+                    <p><strong>使用材料：</strong><span data-field="materials">油画颜料、画布、画笔</span></p>
                 </div>
 
                 <div class="work-description">
                     <h3>作品描述</h3>
-                    <p>描绘冬日雪景的油画作品，展现了雪后村庄的宁静美景。</p>
+                    <p data-field="description">描绘冬日雪景的油画作品，展现了雪后村庄的宁静美景。</p>
                 </div>
             </section>
         </article>
@@ -76,11 +76,12 @@
     <footer>
         <div class="container">
             <p>© <span id="current-year"></span> 艺术创作作品集</p>
-            <p>作品ID：winter-scene | 最后更新：2023-11-20</p>
+            <p>作品ID：<span data-field="id">winter-scene</span> | 最后更新：<span data-field="updatedAt">2023-11-20</span></p>
         </div>
     </footer>
 
     <script src="../../scripts/particles.js"></script>
+    <script src="../../scripts/work-loader.js"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
 

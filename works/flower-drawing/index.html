@@ -25,13 +25,7 @@
 
         <article class="work-detail">
             <header>
-                <h1>春日花朵</h1>
-                <div class="work-meta" style="margin-bottom: 1.5rem;">
-                    <p><strong>分类：</strong>素描</p>
-                    <p><strong>创作时间：</strong>2024年2月</p>
-                    <p><strong>媒介：</strong>铅笔素描</p>
-                    <p><strong>尺寸：</strong>21cm × 29.7cm</p>
-                </div>
+                <h1 data-field="title"></h1>
             </header>
 
             <section class="work-media">
@@ -39,21 +33,34 @@
                     <img src="images/main.jpg"
                          alt="春日花朵铅笔素描作品"
                          class="work-image"
-                         id="main-work-image">
+                         id="main-work-image"
+                         data-field="mainImage">
+                </div>
+                <div class="audio-player">
+                    <h3>作品说明</h3>
+                    <audio controls autoplay>
+                        <source src="audio/guihua.mp3" type="audio/mp4">
+                        您的浏览器不支持音频播放。
+                    </audio>
+                    <div class="audio-transcript" style="margin-top: 1rem;">
+                        <!-- <details> -->
+                            <!-- <summary>查看音频文字转录</summary> -->
+                            <p style="margin-top: 0.5rem;">桂花是秋天的“香香树”！它喜欢晒太阳，叶子硬硬的。一到秋天，就会开出很多金黄色的小花，一簇簇开在叶子旁边，闻起来很香甜。人们喜欢用它来做桂花糕和香香的桂花茶哦！</p>
+                        <!-- </details> -->
+                    </div>
                 </div>
             </section>
 
             <section class="work-info">
                 <div class="work-meta">
                     <h3>作品信息</h3>
-                    <p><strong>ID：</strong>flower-drawing</p>
-                    <p><strong>创作日期：</strong>2024-02-10</p>
-                    <p><strong>使用材料：</strong>铅笔、素描纸、橡皮</p>
+                    <p><strong>作者：</strong><span data-field="arauthor">于千浔</span></p>
+                    <p><strong>创作日期：</strong><span data-field="createdAt">2026-02-10</span></p>
                 </div>
 
                 <div class="work-description">
                     <h3>作品描述</h3>
-                    <p>铅笔素描作品，描绘春天盛开的花朵。仔细观察了花瓣的形态和纹理，尝试表现花朵的生命力。</p>
+                    <p data-field="description">铅笔素描作品，描绘春天盛开的花朵。仔细观察了花瓣的形态和纹理，尝试表现花朵的生命力。</p>
                 </div>
             </section>
         </article>
@@ -62,11 +69,12 @@
     <footer>
         <div class="container">
             <p>© <span id="current-year"></span> 艺术创作作品集</p>
-            <p>作品ID：flower-drawing | 最后更新：2024-02-15</p>
+            <p>作品ID：<span data-field="id">flower-drawing</span> | 最后更新：<span data-field="updatedAt">2024-02-15</span></p>
         </div>
     </footer>
 
     <script src="../../scripts/particles.js"></script>
+    <script src="../../scripts/work-loader.js"></script>
     <script>
         // 设置当前年份
         document.getElementById('current-year').textContent = new Date().getFullYear();

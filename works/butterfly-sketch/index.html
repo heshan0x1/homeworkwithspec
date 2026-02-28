@@ -25,12 +25,12 @@
 
         <article class="work-detail">
             <header>
-                <h1>蝴蝶速写</h1>
+                <h1 data-field="title">蝴蝶速写</h1>
                 <div class="work-meta" style="margin-bottom: 1.5rem;">
-                    <p><strong>分类：</strong>素描</p>
-                    <p><strong>创作时间：</strong>2023年10月</p>
-                    <p><strong>媒介：</strong>彩色铅笔</p>
-                    <p><strong>尺寸：</strong>15cm × 20cm</p>
+                    <p><strong>分类：</strong><span data-field="category">素描</span></p>
+                    <p><strong>创作时间：</strong><span data-field="date">2023年10月</span></p>
+                    <p><strong>媒介：</strong><span data-field="medium">彩色铅笔</span></p>
+                    <p><strong>尺寸：</strong><span data-field="size">15cm × 20cm</span></p>
                 </div>
             </header>
 
@@ -39,21 +39,21 @@
                     <img src="images/main.jpg"
                          alt="蝴蝶速写彩色铅笔作品"
                          class="work-image"
-                         id="main-work-image">
+                         id="main-work-image" data-field="mainImage">
                 </div>
             </section>
 
             <section class="work-info">
                 <div class="work-meta">
                     <h3>作品信息</h3>
-                    <p><strong>ID：</strong>butterfly-sketch</p>
-                    <p><strong>创作日期：</strong>2023-10-05</p>
-                    <p><strong>使用材料：</strong>彩色铅笔、速写纸</p>
+                    <p><strong>ID：</strong><span data-field="id">butterfly-sketch</span></p>
+                    <p><strong>创作日期：</strong><span data-field="createdAt">2023-10-05</span></p>
+                    <p><strong>使用材料：</strong><span data-field="materials">彩色铅笔、速写纸</span></p>
                 </div>
 
                 <div class="work-description">
                     <h3>作品描述</h3>
-                    <p>彩色铅笔绘制的蝴蝶速写，捕捉了蝴蝶翅膀的美丽图案和色彩。</p>
+                    <p data-field="description">彩色铅笔绘制的蝴蝶速写，捕捉了蝴蝶翅膀的美丽图案和色彩。</p>
                 </div>
             </section>
         </article>
@@ -62,11 +62,12 @@
     <footer>
         <div class="container">
             <p>© <span id="current-year"></span> 艺术创作作品集</p>
-            <p>作品ID：butterfly-sketch | 最后更新：2023-10-10</p>
+            <p>作品ID：<span data-field="id">butterfly-sketch</span> | 最后更新：<span data-field="updatedAt">2023-10-10</span></p>
         </div>
     </footer>
 
     <script src="../../scripts/particles.js"></script>
+    <script src="../../scripts/work-loader.js"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>

@@ -1,12 +1,10 @@
 {
     "id": "flower-drawing",
-    "title": "春日花朵",
-    "category": "素描",
-    "date": "2024年2月",
-    "description": "铅笔素描作品，描绘春天盛开的花朵。仔细观察了花瓣的形态和纹理，尝试表现花朵的生命力。",
-    "medium": "铅笔素描",
-    "size": "21cm × 29.7cm",
-    "materials": ["铅笔", "素描纸", "橡皮"],
+    "arauthor": "于千浔",
+    "title": "桂花",
+    "category": "植物立牌",
+    "date": "2026年2月",
+    "description": "桂花的习性介绍",
     "images": [
         {
             "src": "images/main.jpg",
@@ -16,6 +14,6 @@
     ],
     "audio": null,
     "relatedWorks": ["sunset-painting"],
-    "createdAt": "2024-02-10",
-    "updatedAt": "2024-02-15"
+    "createdAt": "2026-02-15",
+    "updatedAt": "2026-02-28"
 }
