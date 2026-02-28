@@ -1,15 +1,13 @@
 [
   {
     "id": "flower-drawing",
-    "title": "春日花朵",
-    "category": "素描",
-    "date": "2024年2月",
-    "description": "铅笔素描作品，描绘春天盛开的花朵",
+    "title": "桂花",
+    "category": "校园作业",
+    "date": "2026年2月",
+    "description": "描述桂花习性的植物立牌",
     "image": "works/flower-drawing/images/main.jpg",
     "thumbnail": "works/flower-drawing/images/thumbnail.jpg",
     "url": "works/flower-drawing/index.html",
-    "medium": "铅笔素描",
-    "size": "21cm × 29.7cm",
     "hasAudio": false
   }
 ]

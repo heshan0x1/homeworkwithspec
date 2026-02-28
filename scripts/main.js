@@ -269,43 +269,11 @@ function updateCategoriesFromArtworks() {
 // 加载分类
 async function loadCategories() {
     try {
-        // 尝试多个可能的路径
-        const possiblePaths = [
-            'data/categories.json',
-            './data/categories.json',
-            '/data/categories.json'
-        ];
-
-        let categories = null;
-        let lastError = null;
-
-        // 按顺序尝试不同路径
-        for (const path of possiblePaths) {
-            try {
-                console.log(`尝试加载分类数据从: ${path}`);
-                const response = await fetch(path);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}, path: ${path}`);
-                }
-                categories = await response.json();
-                console.log(`成功从 ${path} 加载 ${categories.length} 个分类`);
-                break; // 成功则退出循环
-            } catch (err) {
-                lastError = err;
-                console.warn(`从 ${path} 加载失败:`, err.message);
-                // 继续尝试下一个路径
-            }
-        }
-
-        if (categories) {
-            displayCategories(categories);
-        } else {
-            // 所有路径都失败，尝试从作品数据提取分类
-            console.warn('所有分类路径加载失败，尝试从作品数据提取分类');
-            await extractCategoriesFromArtworks();
-        }
+        // 直接从作品数据提取分类
+        console.log('从作品数据提取分类');
+        await extractCategoriesFromArtworks();
     } catch (error) {
-        console.error('加载分类数据失败:', error);
+        console.error('加载分类失败:', error);
         // 尝试从作品数据提取分类
         await extractCategoriesFromArtworks();
     }

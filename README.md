@@ -22,8 +22,7 @@
 │   ├── main.js            # 主JavaScript文件
 │   └── generate-work.js   # 作品页面生成脚本（Node.js）
 ├── data/
-│   ├── artworks.json      # 作品数据索引
-│   └── categories.json    # 分类数据
+│   └── artworks.json      # 作品数据索引
 └── works/
     ├── sunset-painting/   # 示例作品：日落山水
     │   ├── index.html     # 作品页面
@@ -124,7 +123,7 @@
 
 ### 更新分类
 
-编辑 `data/categories.json` 文件，修改分类信息。
+分类信息自动从作品数据中提取。修改 `data/artworks.json` 文件中每个作品的 `category` 字段，网站将自动生成相应的分类和作品数量统计。
 
 ### 自定义样式
 
