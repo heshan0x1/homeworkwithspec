@@ -508,6 +508,10 @@ footer p {
     background: linear-gradient(to bottom, #ff758c, #ff7eb3);
 }
 
+.work-detail header h1 {
+    margin-left: 0.5rem;
+}
+
 .work-media {
     margin-bottom: 2rem;
 }
@@ -679,6 +683,10 @@ footer p {
         font-size: 2.25rem;
     }
 
+    .work-detail header h1 {
+        margin-left: 0.25rem;
+    }
+
     /* 响应式网格调整 */
     .artworks-container,
     .categories-container {
@@ -715,6 +723,10 @@ footer p {
     .work-detail {
         padding: 1rem;
         margin: 1rem auto;
+    }
+
+    .work-detail header h1 {
+        margin-left: 0.15rem;
     }
 
     .work-meta {
