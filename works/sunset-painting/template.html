@@ -161,8 +161,32 @@
         // 音频自动播放功能（延迟1秒播放）
         const audioElement = document.querySelector('audio');
         if (audioElement) {
-            // 延迟1秒后开始播放音频
-            setTimeout(() => {
+            // 检测是否在微信浏览器中
+            const isWeChatBrowser = /MicroMessenger/i.test(navigator.userAgent);
+
+            if (isWeChatBrowser) {
+                // 微信浏览器环境：使用微信特定的音频播放策略
+                console.log('检测到微信浏览器，启用微信特定音频播放策略');
+
+                // 微信JS-SDK准备就绪事件
+                document.addEventListener('WeixinJSBridgeReady', function() {
+                    console.log('WeixinJSBridgeReady，尝试播放音频');
+                    tryPlayAudio(audioElement);
+                }, false);
+
+                // 同时仍然执行常规的延迟播放（作为后备）
+                setTimeout(() => {
+                    tryPlayAudio(audioElement);
+                }, 1000); // 1秒延迟
+            } else {
+                // 非微信浏览器：使用常规延迟播放
+                setTimeout(() => {
+                    tryPlayAudio(audioElement);
+                }, 1000); // 1秒延迟
+            }
+
+            // 音频播放尝试函数
+            function tryPlayAudio(audioElement) {
                 const playPromise = audioElement.play();
 
                 if (playPromise !== undefined) {
@@ -176,7 +200,7 @@
                         showAutoPlayPrompt(audioElement);
                     });
                 }
-            }, 1000); // 1秒延迟
+            }
         }
 
         // 显示自动播放提示
